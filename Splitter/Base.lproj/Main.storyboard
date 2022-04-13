@@ -37,6 +37,7 @@
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter bill total" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hGk-1O-0rI">
                                                 <rect key="frame" x="30" y="0.0" width="964" height="50"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="bill_entered_amount"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="R1e-qF-0CC"/>
                                                 </constraints>
@@ -46,6 +47,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sy9-n3-eee">
                                                 <rect key="frame" x="522" y="80" width="40" height="40"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.6982421875" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="total_person_in_bill"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="HTa-fW-FOb"/>
                                                     <constraint firstAttribute="height" constant="40" id="TRu-1r-mEr"/>
@@ -68,6 +70,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ep-33-bu3">
                                                         <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="increment_person"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="35" id="fLB-rP-xPI"/>
                                                             <constraint firstAttribute="height" constant="35" id="x8a-kU-Kk1"/>
@@ -82,6 +85,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwl-fR-uPV">
                                                         <rect key="frame" x="0.0" y="43" width="35" height="35"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="decrement_person"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="Dfh-cA-t4k"/>
                                                             <constraint firstAttribute="width" constant="35" id="cbz-FD-6jv"/>
@@ -107,6 +111,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ezf-df-kM9">
                                                         <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                                         <color key="backgroundColor" red="0.89411764709999997" green="0.95686274510000002" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="0_percent"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="70" id="5hw-Ox-ton"/>
                                                             <constraint firstAttribute="height" constant="70" id="EfQ-bS-muM"/>
@@ -123,6 +128,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uA2-Pt-Vkt">
                                                         <rect key="frame" x="86" y="0.0" width="70" height="70"/>
                                                         <color key="backgroundColor" red="0.89411764709999997" green="0.95686274510000002" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="10_percent"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="70" id="jtZ-4J-G17"/>
                                                             <constraint firstAttribute="height" constant="70" id="n95-Cy-fxB"/>
@@ -138,6 +144,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ff4-cn-gIl">
                                                         <rect key="frame" x="172" y="0.0" width="70" height="70"/>
                                                         <color key="backgroundColor" red="0.89411764705882346" green="0.95686274509803915" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="15_percent"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="70" id="97z-TB-OqN"/>
                                                             <constraint firstAttribute="height" constant="70" id="HqN-0c-ty0"/>
@@ -154,6 +161,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfz-4s-hEx">
                                                         <rect key="frame" x="258" y="0.0" width="70" height="70"/>
                                                         <color key="backgroundColor" red="0.89411764709999997" green="0.95686274510000002" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="20_percent"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="70" id="jae-Os-JSX"/>
                                                             <constraint firstAttribute="height" constant="70" id="z4i-JS-aV4"/>
@@ -180,6 +188,7 @@
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKn-eH-Zum">
                                                         <rect key="frame" x="63.5" y="43.5" width="20.5" height="41.5"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="total_bill_each_person"/>
                                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="35"/>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -221,6 +230,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MgG-nu-J91">
                                 <rect key="frame" x="30" y="1276" width="964" height="50"/>
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.68235294117647061" blue="0.41568627450980389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="calculate_bill_button"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="DK3-tp-rQ2"/>
                                 </constraints>
