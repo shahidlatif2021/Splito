@@ -8,9 +8,19 @@
 import XCTest
 
 class SplitoUITests: XCTestCase {
-
-    func testApp() {
-        // Write your test cases
+    
+    let splitHomePO = SplitHomePO()
+    
+    override func setUp() {
+        XCUIApplication().launch()
     }
-
+    
+    override func tearDown() {
+        XCUIApplication().terminate()
+    }
+    
+    // Sample for your first test case.
+    func testWhenApplicationDefaultStateWhenApplicationLaunched() throws {
+        
+    }
 }

@@ -26,6 +26,7 @@
 		479DA474275BE6EC00D3035C /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 479DA468275BE6EB00D3035C /* Roboto-ThinItalic.ttf */; };
 		479DA475275BE6EC00D3035C /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 479DA469275BE6EB00D3035C /* Roboto-Thin.ttf */; };
 		A8E2994F2806EF8E004E91F1 /* SplitoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E2994E2806EF8E004E91F1 /* SplitoUITests.swift */; };
+		A8E2995B2806F059004E91F1 /* SplitHomePO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E2995A2806F059004E91F1 /* SplitHomePO.swift */; };
 		F435B56B96E92239AEF4575D /* Pods_Splito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917CBA1FB244A5B767ADEBA7 /* Pods_Splito.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		917CBA1FB244A5B767ADEBA7 /* Pods_Splito.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Splito.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8E2994C2806EF8E004E91F1 /* SplitoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplitoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8E2994E2806EF8E004E91F1 /* SplitoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitoUITests.swift; sourceTree = "<group>"; };
+		A8E2995A2806F059004E91F1 /* SplitHomePO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitHomePO.swift; sourceTree = "<group>"; };
 		D516169076E6F8CF2C6FD8F9 /* Pods-Splito.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splito.debug.xcconfig"; path = "Target Support Files/Pods-Splito/Pods-Splito.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,9 +162,18 @@
 		A8E2994D2806EF8E004E91F1 /* SplitoUITests */ = {
 			isa = PBXGroup;
 			children = (
+				A8E299572806F021004E91F1 /* PageObjects */,
 				A8E2994E2806EF8E004E91F1 /* SplitoUITests.swift */,
 			);
 			path = SplitoUITests;
+			sourceTree = "<group>";
+		};
+		A8E299572806F021004E91F1 /* PageObjects */ = {
+			isa = PBXGroup;
+			children = (
+				A8E2995A2806F059004E91F1 /* SplitHomePO.swift */,
+			);
+			path = PageObjects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8E2995B2806F059004E91F1 /* SplitHomePO.swift in Sources */,
 				A8E2994F2806EF8E004E91F1 /* SplitoUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
