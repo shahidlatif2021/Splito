@@ -7,6 +7,7 @@ target 'Splito' do
 
   # Pods for Splito
   pod 'IQKeyboardManagerSwift'
+  pod 'CoreDataManager'
 
 
 end

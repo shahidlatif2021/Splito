@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -195,6 +195,15 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uKs-SN-Mdl">
+                                                <rect key="frame" x="448" y="399.5" width="128.5" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="View Bill History"/>
+                                                <connections>
+                                                    <action selector="viewBillHistory" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hl1-hn-jSW"/>
+                                                    <segue destination="GHb-TE-wny" kind="show" id="rbA-P0-Vl4"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -205,7 +214,9 @@
                                             <constraint firstItem="Sy9-n3-eee" firstAttribute="leading" secondItem="RmM-5d-vY9" secondAttribute="trailing" constant="10" id="Abr-l8-Ugv"/>
                                             <constraint firstItem="iwD-Mh-x5c" firstAttribute="top" secondItem="74O-rG-ajP" secondAttribute="bottom" constant="20" id="LbH-ab-SlT"/>
                                             <constraint firstItem="hGk-1O-0rI" firstAttribute="leading" secondItem="CIj-bI-fLv" secondAttribute="leading" constant="30" id="Mu6-3c-xjR"/>
+                                            <constraint firstItem="uKs-SN-Mdl" firstAttribute="centerX" secondItem="CIj-bI-fLv" secondAttribute="centerX" id="NlM-nw-PlP"/>
                                             <constraint firstAttribute="bottom" secondItem="rEs-qA-mE4" secondAttribute="bottom" constant="20" id="P3l-rR-ECQ"/>
+                                            <constraint firstAttribute="bottom" secondItem="uKs-SN-Mdl" secondAttribute="bottom" id="Q3B-xG-wfX"/>
                                             <constraint firstItem="oCh-Yi-5CK" firstAttribute="leading" secondItem="Sy9-n3-eee" secondAttribute="trailing" constant="10" id="QL5-S7-Gkf"/>
                                             <constraint firstItem="Sy9-n3-eee" firstAttribute="top" secondItem="hGk-1O-0rI" secondAttribute="bottom" constant="30" id="STI-Gx-yfn"/>
                                             <constraint firstItem="hGk-1O-0rI" firstAttribute="top" secondItem="CIj-bI-fLv" secondAttribute="top" id="VYf-ru-OuD"/>
@@ -282,12 +293,71 @@
             </objects>
             <point key="canvasLocation" x="158" y="90"/>
         </scene>
+        <!--View Bills History View Controller-->
+        <scene sceneID="LEZ-aC-RzL">
+            <objects>
+                <viewController id="GHb-TE-wny" customClass="ViewBillsHistoryViewController" customModule="Splito" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="14W-ZY-wcN">
+                        <rect key="frame" x="0.0" y="0.0" width="704" height="995"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3EM-wE-SYr">
+                                <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="billHistoryCell" id="OJP-MV-GwY">
+                                        <rect key="frame" x="0.0" y="44.5" width="704" height="51.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OJP-MV-GwY" id="FHO-XW-R8h">
+                                            <rect key="frame" x="0.0" y="0.0" width="704" height="51.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Person: 4 total bill amount: 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQn-vn-puy">
+                                                    <rect key="frame" x="16" y="15" width="672" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ZQn-vn-puy" firstAttribute="leading" secondItem="FHO-XW-R8h" secondAttribute="leadingMargin" id="8EL-0j-dYi"/>
+                                                <constraint firstItem="ZQn-vn-puy" firstAttribute="top" secondItem="FHO-XW-R8h" secondAttribute="topMargin" id="Eqh-z9-aE0"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ZQn-vn-puy" secondAttribute="trailing" id="d34-Rc-0MN"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ZQn-vn-puy" secondAttribute="bottom" id="rtk-Xd-vVo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="GHb-TE-wny" id="zUd-ke-e9L"/>
+                                    <outlet property="delegate" destination="GHb-TE-wny" id="Cr6-q9-npB"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Obh-6e-PMx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3EM-wE-SYr" firstAttribute="top" secondItem="Obh-6e-PMx" secondAttribute="top" id="8aU-Wu-J1f"/>
+                            <constraint firstItem="3EM-wE-SYr" firstAttribute="leading" secondItem="Obh-6e-PMx" secondAttribute="leading" id="9vw-ke-Jeb"/>
+                            <constraint firstItem="Obh-6e-PMx" firstAttribute="bottom" secondItem="3EM-wE-SYr" secondAttribute="bottom" id="DcO-3C-oeE"/>
+                            <constraint firstItem="Obh-6e-PMx" firstAttribute="trailing" secondItem="3EM-wE-SYr" secondAttribute="trailing" id="SHa-h3-XBW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="GAM-i8-pfU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BIo-Dj-3n9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="854" y="90"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Asset" width="595" height="1286.5"/>
         <image name="Icon_1" width="188" height="188"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
