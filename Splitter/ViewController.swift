@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import CoreDataManager
+import CoreData
 
 class ViewController: UIViewController {
     
@@ -60,11 +62,32 @@ class ViewController: UIViewController {
             }
             return
         }
+
         let billDot = billAmount.replacingOccurrences(of: ",", with: ".")
         billTotal = Double(billDot) ?? 0
+        if billTotal > 10000 {
+            let alert = UIAlertController(title: "Error", message: "Maximum bill cannot exceed 10000", preferredStyle: .alert)
+            alert.view.accessibilityIdentifier = "maximumBillAlert"
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+            self.present(alert, animated: true)
+            return
+        }
         let result = billTotal * tip / Double(groupSize)
         finalResult = String(format: "%.2f", result)
         totalLabel.text = finalResult
+        
+        let context = CoreDataManager.sharedInstance.backgroundContext
+        context.perform { [weak self] in
+            let manager = NSEntityDescription.insertNewObject(forEntityName: "Bill", into: context) as! Bill
+            manager.numberOfPeople = Int64(self?.groupSize ?? 0)
+            manager.totalBill = result
+            try! context.save()
+        }
+        
+    }
+    
+    @IBAction func viewBillHistory() {
+        
     }
 }
 

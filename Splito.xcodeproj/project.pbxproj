@@ -26,7 +26,8 @@
 		479DA474275BE6EC00D3035C /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 479DA468275BE6EB00D3035C /* Roboto-ThinItalic.ttf */; };
 		479DA475275BE6EC00D3035C /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 479DA469275BE6EB00D3035C /* Roboto-Thin.ttf */; };
 		A80E399928632E9200E39FA4 /* ViewBillsHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80E399828632E9200E39FA4 /* ViewBillsHistoryViewController.swift */; };
-		A80E399B28632EBB00E39FA4 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80E399A28632EBB00E39FA4 /* Bill.swift */; };
+		A80E39A32863319A00E39FA4 /* BillStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A80E39A12863319A00E39FA4 /* BillStore.xcdatamodeld */; };
+		A80E39A62863346600E39FA4 /* BillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80E39A52863346600E39FA4 /* BillTableViewCell.swift */; };
 		A8E2994F2806EF8E004E91F1 /* SplitoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E2994E2806EF8E004E91F1 /* SplitoUITests.swift */; };
 		A8E2995B2806F059004E91F1 /* SplitHomePO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E2995A2806F059004E91F1 /* SplitHomePO.swift */; };
 		F435B56B96E92239AEF4575D /* Pods_Splito.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917CBA1FB244A5B767ADEBA7 /* Pods_Splito.framework */; };
@@ -66,7 +67,8 @@
 		479DA469275BE6EB00D3035C /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		917CBA1FB244A5B767ADEBA7 /* Pods_Splito.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Splito.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A80E399828632E9200E39FA4 /* ViewBillsHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewBillsHistoryViewController.swift; sourceTree = "<group>"; };
-		A80E399A28632EBB00E39FA4 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
+		A80E39A22863319A00E39FA4 /* BillStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BillStore.xcdatamodel; sourceTree = "<group>"; };
+		A80E39A52863346600E39FA4 /* BillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillTableViewCell.swift; sourceTree = "<group>"; };
 		A8E2994C2806EF8E004E91F1 /* SplitoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplitoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8E2994E2806EF8E004E91F1 /* SplitoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitoUITests.swift; sourceTree = "<group>"; };
 		A8E2995A2806F059004E91F1 /* SplitHomePO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitHomePO.swift; sourceTree = "<group>"; };
@@ -124,7 +126,9 @@
 		479DA42E275BE10600D3035C /* Splitter */ = {
 			isa = PBXGroup;
 			children = (
-				A80E399A28632EBB00E39FA4 /* Bill.swift */,
+				A80E39A42863344700E39FA4 /* Cells */,
+				A80E39A02863310600E39FA4 /* Models */,
+				A80E399C2863307000E39FA4 /* Resources */,
 				A80E399828632E9200E39FA4 /* ViewBillsHistoryViewController.swift */,
 				479DA42F275BE10600D3035C /* AppDelegate.swift */,
 				479DA431275BE10600D3035C /* SceneDelegate.swift */,
@@ -163,6 +167,29 @@
 				917CBA1FB244A5B767ADEBA7 /* Pods_Splito.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A80E399C2863307000E39FA4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A80E39A12863319A00E39FA4 /* BillStore.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A80E39A02863310600E39FA4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A80E39A42863344700E39FA4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A80E39A52863346600E39FA4 /* BillTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		A8E2994D2806EF8E004E91F1 /* SplitoUITests */ = {
@@ -339,10 +366,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A80E39A32863319A00E39FA4 /* BillStore.xcdatamodeld in Sources */,
 				479DA434275BE10600D3035C /* ViewController.swift in Sources */,
-				A80E399B28632EBB00E39FA4 /* Bill.swift in Sources */,
 				A80E399928632E9200E39FA4 /* ViewBillsHistoryViewController.swift in Sources */,
 				479DA430275BE10600D3035C /* AppDelegate.swift in Sources */,
+				A80E39A62863346600E39FA4 /* BillTableViewCell.swift in Sources */,
 				479DA432275BE10600D3035C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -631,6 +659,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A80E39A12863319A00E39FA4 /* BillStore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A80E39A22863319A00E39FA4 /* BillStore.xcdatamodel */,
+			);
+			currentVersion = A80E39A22863319A00E39FA4 /* BillStore.xcdatamodel */;
+			path = BillStore.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 479DA424275BE10600D3035C /* Project object */;
 }
