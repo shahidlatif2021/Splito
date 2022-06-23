@@ -22,9 +22,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared.enable = true
         CoreDataManager.sharedInstance.setupWithModel("BillStore")
-        sleep(4)
         
+        
+        for arg in ProcessInfo.processInfo.arguments {
+            if arg == "--clearData" {
+                let backgroundCtx = CoreDataManager.sharedInstance.backgroundContext
+                backgroundCtx.managerFor(Bill.self).delete()
+                try! backgroundCtx.save()
+            }
+        }
 
+        sleep(UInt32.random(in: 12...20))
         
         // Override point for customization after application launch.
         return true

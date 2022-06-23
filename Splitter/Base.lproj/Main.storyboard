@@ -302,31 +302,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9d-aH-GHI">
-                                <rect key="frame" x="0.0" y="30" width="704" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9d-aH-GHI">
+                                <rect key="frame" x="0.0" y="30" width="704" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsX-DM-jle">
-                                <rect key="frame" x="0.0" y="59" width="704" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsX-DM-jle">
+                                <rect key="frame" x="0.0" y="38" width="704" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kYx-rb-amp">
-                                <rect key="frame" x="0.0" y="90" width="704" height="905.5"/>
+                                <rect key="frame" x="0.0" y="48" width="704" height="947.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="billHistoryCell" id="Fqs-EW-d9S" customClass="BillTableViewCell" customModule="Splito" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="704" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="704" height="51.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fqs-EW-d9S" id="tAY-Ot-ZMc">
-                                            <rect key="frame" x="0.0" y="0.0" width="704" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="704" height="51.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Person: 4 total bill amount: 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ao-Qp-s4h">
-                                                    <rect key="frame" x="16" y="11" width="672" height="21.5"/>
+                                                    <rect key="frame" x="16" y="15" width="672" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -349,12 +349,17 @@
                                     <outlet property="delegate" destination="0ox-HD-Nnc" id="DzD-WM-qeE"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="RxU-2E-8Zm">
+                                <rect key="frame" x="333.5" y="479.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NOH-XK-NLF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="RxU-2E-8Zm" firstAttribute="centerY" secondItem="uR1-HF-EbD" secondAttribute="centerY" id="3v1-51-9Bx"/>
                             <constraint firstItem="rsX-DM-jle" firstAttribute="top" secondItem="Y9d-aH-GHI" secondAttribute="bottom" constant="8" symbolic="YES" id="7fR-fh-xyk"/>
                             <constraint firstItem="kYx-rb-amp" firstAttribute="top" secondItem="rsX-DM-jle" secondAttribute="bottom" constant="10" id="Ff3-Me-crh"/>
+                            <constraint firstItem="RxU-2E-8Zm" firstAttribute="centerX" secondItem="uR1-HF-EbD" secondAttribute="centerX" id="H0u-p2-o9y"/>
                             <constraint firstItem="NOH-XK-NLF" firstAttribute="trailing" secondItem="kYx-rb-amp" secondAttribute="trailing" id="QaD-ZZ-RS4"/>
                             <constraint firstItem="Y9d-aH-GHI" firstAttribute="top" secondItem="NOH-XK-NLF" secondAttribute="top" constant="30" id="RGS-3m-VtG"/>
                             <constraint firstItem="rsX-DM-jle" firstAttribute="trailing" secondItem="Y9d-aH-GHI" secondAttribute="trailing" id="Xix-3c-bhh"/>
@@ -367,7 +372,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="M9O-3T-Yu6"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="RxU-2E-8Zm" id="M8u-Ix-7aF"/>
                         <outlet property="numberOfPeopleInBill" destination="Y9d-aH-GHI" id="UGa-7s-uYf"/>
+                        <outlet property="tableView" destination="kYx-rb-amp" id="5vP-9l-hUe"/>
                         <outlet property="totalBillLabel" destination="rsX-DM-jle" id="LG8-1F-fNe"/>
                     </connections>
                 </viewController>
