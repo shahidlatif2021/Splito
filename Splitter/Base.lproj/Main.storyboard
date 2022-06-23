@@ -299,7 +299,7 @@
             <objects>
                 <viewController id="0ox-HD-Nnc" customClass="ViewBillsHistoryViewController" customModule="Splito" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uR1-HF-EbD">
-                        <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="704" height="995"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9d-aH-GHI">
@@ -319,14 +319,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="billHistoryCell" id="Fqs-EW-d9S" customClass="BillTableViewCell" customModule="Splito" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="704" height="51.5"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="704" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fqs-EW-d9S" id="tAY-Ot-ZMc">
-                                            <rect key="frame" x="0.0" y="0.0" width="704" height="51.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="704" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Person: 4 total bill amount: 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ao-Qp-s4h">
-                                                    <rect key="frame" x="16" y="15" width="672" height="21.5"/>
+                                                    <rect key="frame" x="16" y="15" width="672" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -352,20 +352,49 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="RxU-2E-8Zm">
                                 <rect key="frame" x="333.5" y="479.5" width="37" height="37"/>
                             </activityIndicatorView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qp4-bc-LrY">
+                                <rect key="frame" x="0.0" y="38" width="704" height="957.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deZ-XI-FUT">
+                                        <rect key="frame" x="321" y="468.5" width="62" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="questionmark.folder.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vuM-h6-Uez">
+                                        <rect key="frame" x="337" y="429.5" width="30" height="27.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="1oQ-Zi-Jmf"/>
+                                            <constraint firstAttribute="width" constant="30" id="M8H-J2-lAg"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="vuM-h6-Uez" firstAttribute="centerX" secondItem="qp4-bc-LrY" secondAttribute="centerX" id="Nvv-Xe-9C6"/>
+                                    <constraint firstItem="deZ-XI-FUT" firstAttribute="top" secondItem="vuM-h6-Uez" secondAttribute="bottom" constant="10" id="QjD-Ba-ldj"/>
+                                    <constraint firstItem="deZ-XI-FUT" firstAttribute="centerY" secondItem="qp4-bc-LrY" secondAttribute="centerY" id="VqZ-qb-FKI"/>
+                                    <constraint firstItem="deZ-XI-FUT" firstAttribute="centerX" secondItem="qp4-bc-LrY" secondAttribute="centerX" id="pLW-WK-yDO"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NOH-XK-NLF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="qp4-bc-LrY" firstAttribute="leading" secondItem="NOH-XK-NLF" secondAttribute="leading" id="2Te-cr-KoV"/>
                             <constraint firstItem="RxU-2E-8Zm" firstAttribute="centerY" secondItem="uR1-HF-EbD" secondAttribute="centerY" id="3v1-51-9Bx"/>
                             <constraint firstItem="rsX-DM-jle" firstAttribute="top" secondItem="Y9d-aH-GHI" secondAttribute="bottom" constant="8" symbolic="YES" id="7fR-fh-xyk"/>
                             <constraint firstItem="kYx-rb-amp" firstAttribute="top" secondItem="rsX-DM-jle" secondAttribute="bottom" constant="10" id="Ff3-Me-crh"/>
                             <constraint firstItem="RxU-2E-8Zm" firstAttribute="centerX" secondItem="uR1-HF-EbD" secondAttribute="centerX" id="H0u-p2-o9y"/>
                             <constraint firstItem="NOH-XK-NLF" firstAttribute="trailing" secondItem="kYx-rb-amp" secondAttribute="trailing" id="QaD-ZZ-RS4"/>
                             <constraint firstItem="Y9d-aH-GHI" firstAttribute="top" secondItem="NOH-XK-NLF" secondAttribute="top" constant="30" id="RGS-3m-VtG"/>
+                            <constraint firstItem="NOH-XK-NLF" firstAttribute="trailing" secondItem="qp4-bc-LrY" secondAttribute="trailing" id="Ukd-x4-dpl"/>
                             <constraint firstItem="rsX-DM-jle" firstAttribute="trailing" secondItem="Y9d-aH-GHI" secondAttribute="trailing" id="Xix-3c-bhh"/>
                             <constraint firstItem="NOH-XK-NLF" firstAttribute="bottom" secondItem="kYx-rb-amp" secondAttribute="bottom" id="YuQ-kK-2yg"/>
                             <constraint firstItem="kYx-rb-amp" firstAttribute="leading" secondItem="NOH-XK-NLF" secondAttribute="leading" id="eZt-MN-MGB"/>
                             <constraint firstItem="Y9d-aH-GHI" firstAttribute="leading" secondItem="NOH-XK-NLF" secondAttribute="leading" id="gMX-uK-G4k"/>
+                            <constraint firstItem="NOH-XK-NLF" firstAttribute="bottom" secondItem="qp4-bc-LrY" secondAttribute="bottom" id="gxc-6q-aiD"/>
+                            <constraint firstItem="qp4-bc-LrY" firstAttribute="top" secondItem="rsX-DM-jle" secondAttribute="bottom" id="kYc-ed-gNf"/>
                             <constraint firstItem="NOH-XK-NLF" firstAttribute="trailing" secondItem="Y9d-aH-GHI" secondAttribute="trailing" id="yPY-Op-UCn"/>
                             <constraint firstItem="rsX-DM-jle" firstAttribute="leading" secondItem="Y9d-aH-GHI" secondAttribute="leading" id="zkY-eZ-jGp"/>
                         </constraints>
@@ -373,6 +402,7 @@
                     <navigationItem key="navigationItem" id="M9O-3T-Yu6"/>
                     <connections>
                         <outlet property="activityIndicator" destination="RxU-2E-8Zm" id="M8u-Ix-7aF"/>
+                        <outlet property="emptyView" destination="qp4-bc-LrY" id="C4a-uB-Efz"/>
                         <outlet property="numberOfPeopleInBill" destination="Y9d-aH-GHI" id="UGa-7s-uYf"/>
                         <outlet property="tableView" destination="kYx-rb-amp" id="5vP-9l-hUe"/>
                         <outlet property="totalBillLabel" destination="rsX-DM-jle" id="LG8-1F-fNe"/>
@@ -386,6 +416,7 @@
     <resources>
         <image name="Asset" width="595" height="1286.5"/>
         <image name="Icon_1" width="188" height="188"/>
+        <image name="questionmark.folder.fill" catalog="system" width="128" height="97"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

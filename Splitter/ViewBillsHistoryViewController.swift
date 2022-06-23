@@ -14,11 +14,11 @@ class ViewBillsHistoryViewController: UIViewController {
     @IBOutlet weak var numberOfPeopleInBill: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var emptyView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        tableView.accessibilityIdentifier = "billHistoryTableView"
         Timer.scheduledTimer(timeInterval: Double.random(in: 10...20), target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         activityIndicator.startAnimating()
     }
@@ -33,6 +33,8 @@ class ViewBillsHistoryViewController: UIViewController {
             self?.numberOfPeopleInBill.text = String(format: "Total People: %d ", totalPeopleInBillHistory)
             let totalBillInBillHistory = CoreDataManager.sharedInstance.mainContext.managerFor(Bill.self).sum("totalBill") as? Double ?? 0
             self?.totalBillLabel.text =  String(format: "Total Bill: %.2f", totalBillInBillHistory)
+            
+            self?.emptyView.isHidden =  (self?.bills?.count ?? 0) > 0
         }
     }
 }
