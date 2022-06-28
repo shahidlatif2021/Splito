@@ -299,17 +299,19 @@
             <objects>
                 <viewController id="0ox-HD-Nnc" customClass="ViewBillsHistoryViewController" customModule="Splito" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uR1-HF-EbD">
-                        <rect key="frame" x="0.0" y="0.0" width="704" height="995"/>
+                        <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9d-aH-GHI">
                                 <rect key="frame" x="0.0" y="30" width="704" height="0.0"/>
+                                <accessibility key="accessibilityConfiguration" identifier="numberOfPeople"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsX-DM-jle">
                                 <rect key="frame" x="0.0" y="38" width="704" height="0.0"/>
+                                <accessibility key="accessibilityConfiguration" identifier="totalBill"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -319,14 +321,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="billHistoryCell" id="Fqs-EW-d9S" customClass="BillTableViewCell" customModule="Splito" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="704" height="51"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="704" height="51.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fqs-EW-d9S" id="tAY-Ot-ZMc">
-                                            <rect key="frame" x="0.0" y="0.0" width="704" height="51"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="704" height="51.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Person: 4 total bill amount: 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ao-Qp-s4h">
-                                                    <rect key="frame" x="16" y="15" width="672" height="21"/>
+                                                    <rect key="frame" x="16" y="15" width="672" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
