@@ -13,6 +13,7 @@ class BillTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        accessibilityIdentifier = "billCell"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

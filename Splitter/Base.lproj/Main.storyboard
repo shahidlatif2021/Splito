@@ -329,6 +329,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Person: 4 total bill amount: 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ao-Qp-s4h">
                                                     <rect key="frame" x="16" y="15" width="672" height="21.5"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="billSplitRow"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -406,7 +407,7 @@
                         <outlet property="activityIndicator" destination="RxU-2E-8Zm" id="M8u-Ix-7aF"/>
                         <outlet property="emptyView" destination="qp4-bc-LrY" id="C4a-uB-Efz"/>
                         <outlet property="numberOfPeopleInBill" destination="Y9d-aH-GHI" id="UGa-7s-uYf"/>
-                        <outlet property="tableView" destination="kYx-rb-amp" id="5vP-9l-hUe"/>
+                        <outlet property="tableView" destination="kYx-rb-amp" id="bpm-Er-VV8"/>
                         <outlet property="totalBillLabel" destination="rsX-DM-jle" id="LG8-1F-fNe"/>
                     </connections>
                 </viewController>

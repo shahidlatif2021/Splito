@@ -10,7 +10,7 @@ import CoreDataManager
 import CoreData
 
 class ViewController: UIViewController {
-    
+    @IBOutlet weak var tableView: UITableView!
     //MARK: - Outlets
     @IBOutlet weak var billTextField: UITextField!
     @IBOutlet weak var groupLabel: UILabel!
