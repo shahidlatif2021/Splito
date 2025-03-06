@@ -21,15 +21,15 @@ on:
           type: choice
           options:
             - RegressionTests
-            - SmokeRegressionTests
-            - AnalyticsTests
-            - HomeRegressionTests
-            - ActivitiesRegressionTests
+            - SmokeTests
+            - AnalyticsRegressionTests
             - FlightsRegressionTests
-            - HotelRegressionTests
-            - HotelsDeeplinkTests
-            - FlightsDeeplinkTests
+            - FlightsDeeplinkRegressionTests
+            - StaysRegressionTests
+            - StaysDeeplinkRegressionTests
+            - ActivitiesRegressionTests
             - MyAccountRegressionTests
+            - HomeRegressionTests
 
 concurrency:
   group: run_ui_tests-${{ github.ref }}
