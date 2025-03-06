@@ -1,19 +1,57 @@
-# This workflow will build a Swift project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-swift
-
-name: Swift
-
-on: workflow_dispatch
-
+on:
+  schedule:
+    - cron: '0 17 * * 1-5' # Runs at 5:00 PM UTC (9:00 PM Dubai time) every weekday (Monday to Friday)
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to run the workflow on'
+        required: true
+        default: 'develop'
+      testPlan:
+        description: 'Select a Test Plan'
+        required: true
+        default: 'RegressionTests'
+        type: choice
+        options:
+          - RegressionTests
+          - SmokeTests
+          - SanityTests
+          - PerformanceTests
 
 jobs:
-  build:
-
-    runs-on: macos-latest
-
+  setup:
+    runs-on: macOS-self-hosted
     steps:
-    - uses: actions/checkout@v4
-    - name: Build
-      run: swift build -v
-    - name: Run tests
-      run: swift test -v
+      - name: Set branch based on trigger
+        id: set-branch
+        run: |
+          if [ "${{ github.event_name }}" == "schedule" ]; then
+            echo "branch=develop" >> $GITHUB_ENV
+          else
+            echo "branch=${{ github.event.inputs.branch }}" >> $GITHUB_ENV
+          fi
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+          ref: ${{ env.branch }}
+
+      - name: Branch Used
+        run: echo "Running on branch ${{ env.branch }}"
+
+  run-ios-ui-tests:
+    needs: setup
+    runs-on: macOS-self-hosted
+    steps:
+      - name: Run iOS UI Tests
+        shell: bash
+        run: |
+          bundle exec fastlane ui_test_report testplan:"${{ github.event.inputs.testPlan }}"
+        env:
+          SLACK_URL: ${{ secrets.RegressionTest_SLACK_CHANNEL }}
+          SCHEME: Al-Mosafer_Dev
+          GYM_SCHEME: Al-Mosafer_Dev
+          GYM_PROJECT: Travel.xcodeproj
+          LC_ALL: en_US.UTF-8
+          LANG: en_US.UTF-8
