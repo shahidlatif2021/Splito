@@ -1,26 +1,44 @@
+name: Run UI Tests
+
 on:
   schedule:
-    - cron: '0 17 * * 1-5' # Runs at 5:00 PM UTC (9:00 PM Dubai time) every weekday (Monday to Friday)
-  workflow_dispatch:
+    #        ┌───────── minute (0 - 59)
+    #        │ ┌───────── hour (0 - 23)
+    #        │ │ ┌───────── day of the month (1 - 31)
+    #        │ │ │ ┌───────── month (1 - 12 or JAN-DEC)
+    #        │ │ │ │ ┌───────── day of the week (0 - 6 or SUN-SAT)
+    - cron: '0 17 * * 1-5' # Runs at 4:00 PM UTC (10:00 PM Dubai time) every weekday (Monday to Friday)
+  workflow_dispatch: # Allow manual trigger
     inputs:
-      branch:
-        description: 'Branch to run the workflow on'
-        required: true
-        default: 'develop'
-      testPlan:
-        description: 'Select a Test Plan'
-        required: true
-        default: 'RegressionTests'
-        type: choice
-        options:
-          - RegressionTests
-          - SmokeTests
-          - SanityTests
-          - PerformanceTests
+        branch:
+          description: 'Branch to run the workflow on'
+          required: true
+          default: 'develop'
+        testPlan:
+          description: 'Select a Test Plan'
+          required: true
+          default: 'RegressionTests'
+          type: choice
+          options:
+            - RegressionTests
+            - SmokeRegressionTests
+            - AnalyticsTests
+            - HomeRegressionTests
+            - ActivitiesRegressionTests
+            - FlightsRegressionTests
+            - HotelRegressionTests
+            - HotelsDeeplinkTests
+            - FlightsDeeplinkTests
+            - MyAccountRegressionTests
+
+concurrency:
+  group: run_ui_tests-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   setup:
     runs-on: macOS-self-hosted
+
     steps:
       - name: Set branch based on trigger
         id: set-branch
@@ -40,16 +58,46 @@ jobs:
       - name: Branch Used
         run: echo "Running on branch ${{ env.branch }}"
 
+      - name: Set Ruby Environment Variables
+        shell: bash
+        run: |
+          if [[ $(uname -m) == 'arm64' ]]; then
+            export LDFLAGS="-L/opt/homebrew/opt/ruby@3.1/lib"
+            export CPPFLAGS="-I/opt/homebrew/opt/ruby@3.1/include"
+            export PATH="/opt/homebrew/opt/ruby@3.1/bin:$PATH"
+          else
+            export LDFLAGS="-L/usr/local/opt/ruby@3.1/lib"
+            export CPPFLAGS="-I/usr/local/opt/ruby@3.1/include"
+            export PATH="/usr/local/opt/ruby@3.1/bin:$PATH"
+          fi
+          export PATH="$(gem environment gemdir)/bin:$PATH"
+          echo "$(which ruby) configured"
+      - name: Setup Environment
+        shell: bash
+        run: |
+          sh setupEnvironment.sh dev main
+          sh setupEnvironment.sh dev widget
+          sh setupExtensionConfigFile.sh
+      - name: Cache SwiftPM dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.build
+            .build
+            .swiftpm
+          key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-spm-
   run-ios-ui-tests:
     needs: setup
     runs-on: macOS-self-hosted
+
     steps:
-      - name: Run iOS UI Tests
+      - name: Run UI Tests
         shell: bash
         run: |
           bundle exec fastlane ui_test_report testplan:"${{ github.event.inputs.testPlan }}"
         env:
-          SLACK_URL: ${{ secrets.RegressionTest_SLACK_CHANNEL }}
           SCHEME: Al-Mosafer_Dev
           GYM_SCHEME: Al-Mosafer_Dev
           GYM_PROJECT: Travel.xcodeproj
