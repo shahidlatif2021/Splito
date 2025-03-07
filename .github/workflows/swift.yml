@@ -1,13 +1,5 @@
 name: Run UI Tests
 
-on:
-  schedule:
-    #        ┌───────── minute (0 - 59)
-    #        │ ┌───────── hour (0 - 23)
-    #        │ │ ┌───────── day of the month (1 - 31)
-    #        │ │ │ ┌───────── month (1 - 12 or JAN-DEC)
-    #        │ │ │ │ ┌───────── day of the week (0 - 6 or SUN-SAT)
-    - cron: '0 17 * * 1-5' # Runs at 4:00 PM UTC (10:00 PM Dubai time) every weekday (Monday to Friday)
   workflow_dispatch: # Allow manual trigger
     inputs:
         branch:
